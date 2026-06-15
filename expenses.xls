@@ -1,0 +1,4 @@
+Payer,Amount,Participants
+alice,900.0,"david,bob,alice"
+bob,300.0,"david,bob,alice"
+david,200.0,"david,alice"
