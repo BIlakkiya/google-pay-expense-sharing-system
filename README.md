@@ -5,7 +5,6 @@
 This project is a Google Pay-inspired Expense Sharing System developed using Python and Data Science libraries. It helps users split expenses fairly, calculate balances, and determine final settlements among group members.
 
 
-
 ## Features
 
 * Equal expense splitting
@@ -14,9 +13,10 @@ This project is a Google Pay-inspired Expense Sharing System developed using Pyt
 * Expense analytics
 * Statistical analysis
 * Data visualization using graphs
-* CSV dataset generation
+* XLS dataset generation
 * Handling uneven contributions
 * Handling missing payments
+* Support for partial participation
 
 
 
@@ -24,25 +24,29 @@ This project is a Google Pay-inspired Expense Sharing System developed using Pyt
 
 * Python
 * Pandas
-* NumPy
 * Matplotlib
 * Jupyter Notebook
 
 
 
 ## Project Structure
+
+
 google-pay-expense-sharing-system
 │
-├── expense_sharing.py
+├── Project_report
+├── README.md
+├── analytics.ipynb
 ├── analytics.py
-├── expenses.csv
-├── analytics_report.csv
+├── analytics_report.xls
 ├── expense_sharing.ipynb
-└── analytics.ipynb
+├── expense_sharing.py
+└── expenses.xls
+
 
 ## Dataset
 
-The dataset contains:
+The dataset contains the following columns:
 
 | Column       | Description                    |
 | ------------ | ------------------------------ |
@@ -50,7 +54,7 @@ The dataset contains:
 | Amount       | Amount paid                    |
 | Participants | People involved in the expense |
 
-Example:
+### Example Dataset
 
 | Payer | Amount | Participants    |
 | ----- | ------ | --------------- |
@@ -63,15 +67,18 @@ Example:
 
 * Created a DataFrame using Pandas.
 * Checked for missing values.
-* Calculated summary statistics.
-* Generated contribution percentages.
+* Generated summary statistics.
+* Calculated contribution percentages.
 * Ranked spenders.
+* Exported processed data to XLS files.
 
 
 
 ## Expense Splitting Methodology
 
-The project uses **equal contribution** among participants.
+The project uses **equal expense splitting** among participants. Each expense is divided equally among the people involved in that transaction.
+
+Although expenses are split equally, users may contribute different amounts. Therefore, balances are calculated and final settlements are generated accordingly.
 
 ### Example
 
@@ -81,9 +88,8 @@ Suppose:
 * Bob pays Rs.300
 * David pays Rs.200
 
-Final settlement:
-David pays Alice Rs.300
-Bob pays Alice Rs.100
+The system calculates the final balances and suggests settlements.
+
 
 
 ## Analytics Performed
@@ -128,18 +134,23 @@ Users who have not paid are assigned negative balances and appropriate settlemen
 
 Expenses involving only selected participants are supported.
 
+
+
 ## Sample Output
 
-Balances:
+### Balances
 
 Alice : 400
 Bob : -100
 David : -300
 
-Final Settlement:
+
+### Final Settlement
+
 
 David pays Alice Rs.300
 Bob pays Alice Rs.100
+
 
 
 ## Future Enhancements
@@ -150,3 +161,7 @@ Bob pays Alice Rs.100
 * Database integration
 * Machine Learning-based spending prediction
 
+
+## Conclusion
+
+This project demonstrates how Python and Data Science libraries can be used to build an expense-sharing application that performs fair expense distribution, balance calculations, settlement suggestions, and spending analytics with graphical visualization.
