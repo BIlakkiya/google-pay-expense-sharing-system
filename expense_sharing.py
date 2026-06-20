@@ -163,4 +163,3 @@ if __name__ == "__main__":
     # Final settlement
     expense_sharing.calculate_settlement()
 
-s
